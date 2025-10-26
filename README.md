@@ -4,6 +4,8 @@ Ok so basically this is like not cleaned at all, all paths can be found in `.hta
 
 Assets NEED to be uploaded manually, you do NOT use ids for the assets they are all using the versioning system.
 
+Thankfully, you don't need to worry about that. The schema file includes the assets along with `assets.7z`
+
 Also about assets here's a general structure you need for this
 
 ```
