@@ -1,0 +1,152 @@
+# User pages :)
+<IfModule mod_rewrite.c>
+    RewriteEngine on 
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	RewriteRule ^users/([0-9]+)/profile$ /users/profile.php?id=$1		  [END]
+
+	RewriteRule ^users/([0-9]+)$  /users/profile.php?id=$1&redirect=true  [END]
+	RewriteRule ^users/([0-9]+)/$ /users/profile.php?id=$1&redirect=true  [END]
+
+	RewriteRule ^asset/?$ /core/utilities/assetdeliverer.php			  [END]
+	RewriteRule ^Asset/?$ /core/utilities/assetdeliverer.php 			  [END]
+	
+	RewriteRule ^IDE/Landing.aspx$ /core/ide/landing.php				  		  [END]
+	RewriteRule ^ide/welcome$ /my/places.php				  		  [END]
+	RewriteRule ^IDE/welcome$ /my/places.php				  		  [END]
+
+	RewriteRule ^IDE/Upload.aspx$ /core/ide/publish.php				  		  [END]
+	RewriteRule ^IDE/PublishNewPlace.aspx$ /core/ide/publishnewplace.php				  		  [END]
+	RewriteRule ^IDE/ClientToolbox.aspx	/core/ide/toolbox.php			  [END]
+
+	RewriteRule ^Data/Upload.ashx	/core/ide/upload.php			  [END]
+
+	RewriteRule ^IDE/Toolbox/GetTotalNumberOfResults /core/ide/toolbox/gettotalnumberofresults.php			  [END]
+	RewriteRule ^IDE/Toolbox/Search /core/ide/toolbox/search.php			  [END]
+
+	RewriteRule ^Game/Upload.aspx /core/ide/goingupload.php			  [END]
+
+	RewriteRule ^Login/Negotiate.ashx$ /core/authentication/negotiate.php [END]
+	RewriteRule ^Login/RequestAuth.ashx$ /core/authentication/requestauth.php [END]
+	RewriteRule ^login/RequestAuth.ashx$ /core/authentication/requestauth.php [END]
+	RewriteRule ^game/GetCurrentUser.ashx$ /core/authentication/getcurrentuser.php [END]
+	RewriteRule ^Game/GetCurrentUser.ashx$ /core/authentication/getcurrentuser.php [END]
+	
+	RewriteRule ^Game/PlaceSpecificScript.ashx$ /core/gamescripts/placespecificscript.php   [END]
+	RewriteRule ^Game/LoadPlaceInfo.ashx$ /core/gamescripts/loadplaceinfo.php   [END]
+	RewriteRule ^game/gameserver.ashx$ /core/gamescripts/gameserver.php	  [END]
+	RewriteRule ^game/host.ashx$ /core/gamescripts/host.php	  [END]
+	RewriteRule ^game/join.ashx$ /core/gamescripts/join.php				  [END]
+	RewriteRule ^game/studio.ashx$ /core/gamescripts/studio.php			  [END]
+	RewriteRule ^game/visit.ashx$ /core/gamescripts/visit.php 			  [END]
+	RewriteRule ^game/edit.ashx$ /core/gamescripts/edit.php			  [END]
+
+	RewriteRule ^Game/gameserver.ashx$ /core/gamescripts/gameserver.php   [END] # Only exists bc of windows!
+	RewriteRule ^Game/host.ashx$ /core/gamescripts/host.php   [END] # Only exists bc of windows!
+	
+	RewriteRule ^Game/join.ashx$ /core/gamescripts/join.php				  [END] # Only exists bc of windows!
+	RewriteRule ^Game/studio.ashx$ /core/gamescripts/studio.php			  [END] # Only exists bc of windows!
+	RewriteRule ^Game/visit.ashx$ /core/gamescripts/visit.php			  [END] # Only exists bc of windows!
+	RewriteRule ^Game/edit.ashx$ /core/gamescripts/edit.php			  [END] # Only exists bc of windows!
+	
+	RewriteRule ^login$ login.php										  [END]
+	RewriteRule ^Login$ login.php										  [END]
+	RewriteRule ^register$ register.php									  [END]
+	RewriteRule ^people$ people.php										  [END]
+
+	RewriteRule ^my/home$ /my/home.php									  [END]
+	RewriteRule ^my/stuff$ /my/stuff.php									  [END]
+	RewriteRule ^my/profile$ /my/profile.php							  [END]
+	RewriteRule ^my/places$ /my/places.php							  [END]
+	RewriteRule ^my/character$ /my/character.php							  [END]
+
+	RewriteRule ^api/feeds$ /api/feeds.php								  [END]
+	RewriteRule ^api/logout$ /api/logout.php							  [END]
+	RewriteRule ^game/logout.aspx$ /api/logout.php							  [END]
+	RewriteRule ^Game/logout.aspx$ /api/logout.php							  [END]
+	RewriteRule ^api/user$ /api/user.php							  [END]
+	RewriteRule ^api/favourite$ /api/favourite.php							  [END]
+	RewriteRule ^api/stuff$ /api/stuff.php							  [END]
+	RewriteRule ^api/people$ /api/people.php							  [END]
+	RewriteRule ^api/games$ /api/games.php							  [END]
+	RewriteRule ^api/catalog$ /api/catalog.php							  [END]
+	RewriteRule ^api/stipend$ /api/stipend.php							  [END]
+	RewriteRule ^api/purchase$ /api/purchase.php							  [END]
+	RewriteRule ^api/character$ /api/character.php							  [END]
+
+	RewriteRule ^game/maingameserver.ashx$ /core/gamescripts/coregameserver.php [END]
+	RewriteRule ^Game/maingameserver.ashx$ /core/gamescripts/coregameserver.php [END]
+
+	RewriteRule ^Game/Tools/InsertAsset.ashx$ /core/insertasset.php [END]
+
+	RewriteRule ^Friend/AreFriends$ /Friend/AreFriends.php [END]
+
+	RewriteRule ^create/(.*?)$ /core/create.php?type=$1 [END]
+
+	RewriteRule ^UploadMedia/PostImage.aspx /core/uploadmedia/postimage.php [END]
+	RewriteRule ^UploadMedia/UploadVideo.aspx /core/uploadmedia/uploadvideo.php [END]
+
+	RewriteRule ^Sets/SetHandler.ashx /core/sets/setshandler.php [END]
+	RewriteRule ^sets/SetsHandler.ashx /core/sets/setshandler.php [END]
+	RewriteRule ^UploadMedia/UploadVideo.aspx /core/uploadmedia/uploadvideo.php [END]
+
+	RewriteRule ^Game/Tools/ThumbnailAsset.ashx /images/unavailable-75.png [END]
+	RewriteRule ^game/Tools/ThumbnailAsset.ashx /images/unavailable-75.png [END]
+
+	RewriteRule ^Thumbs/RawAsset.ashx /core/thumbs/rawasset.php [END]
+	RewriteRule ^thumbs/RawAsset.ashx /core/thumbs/rawasset.php [END]
+	RewriteRule ^Thumbs/Asset.ashx /core/thumbs/rawasset.php [END]
+	RewriteRule ^thumbs/Asset.ashx /core/thumbs/rawasset.php [END]
+	RewriteRule ^thumbs/?$ /core/thumbs/index.php [END]
+
+	RewriteRule ^marketplace/productinfo$ /core/marketplace/productinfo.php [END]
+
+	RewriteRule ^edit$ /edit.php [END]
+
+	RewriteCond %{QUERY_STRING} id=(.+)
+	RewriteRule ^(.*)-item$ /item.php?name=$1&id=%1 [QSD,END]
+	RewriteCond %{QUERY_STRING} id=(.+)
+	RewriteRule ^(.*)-place$ /place.php?name=$1&id=%1 [QSD,END]
+	
+	RewriteRule ^Asset/BodyColors.ashx$ /core/character/bodycolors.php 			  [END]
+	RewriteRule ^Asset/CharacterFetch.ashx$ /core/character/characterfetch.php 			  [END]
+	RewriteRule ^Asset/GetScriptState.ashx$ /core/gamescripts/getscriptstate.txt 			  [END]
+
+	# SHUT THE FUCK UPP!!!!!
+	RewriteRule ^Error/Dmp.ashx$ /core/nothing.txt [END]
+	RewriteRule ^v1.1/Counters/Increment/?$ /core/nothing.txt [END]
+	RewriteRule ^v1.1/counters/increment/?$ /core/nothing.txt [END]
+	RewriteRule ^game/report-stats?$ /core/nothing.txt [END]
+	RewriteRule ^Game/report-stats?$ /core/nothing.txt [END]
+	RewriteRule ^GetAllowedSecurityVersions/?$ /core/nothing.txt [END]
+	RewriteRule ^GetAllowedSecurityVersions$ /core/nothing.txt [END]
+	RewriteRule ^GetAllowedMD5Hashes/?$ /core/nothing.txt [END]
+	RewriteRule ^GetAllowedMD5Hashes$ /core/nothing.txt [END]
+
+	RewriteRule ^game/([0-9]+)$ /place.php?name=a&id=$1 [END]
+	RewriteRule ^Game/([0-9]+)$ /place.php?name=a&id=$1 [END]
+
+	RewriteRule ^games$ /games.php [END]
+	RewriteRule ^catalog$ /catalog.php [END]
+
+	RewriteRule ^test$ /test.php [END]
+
+	RewriteRule ^games.php$ /core/error/404.php [END]
+	RewriteRule ^games.php$ /core/error/404.php [END]
+	RewriteRule ^catalog.php$ /core/error/404.php [END]
+	RewriteRule ^edit.php$ /core/error/404.php [END]
+	RewriteRule ^item.php$ /core/error/404.php [END]
+	RewriteRule ^place.php$ /core/error/404.php [END]
+	RewriteRule ^README.md$ /core/error/404.php [END]
+
+	RewriteRule ^core/error/404.php /core/error/404.php [END]
+	
+	RewriteRule ^Admin/components/(.*)$ Admin/components/$1.php [END]
+
+	RewriteRule ^core(/.*)?$ /core/error/404.php [END]
+	RewriteRule ^api(/.*)?$ /core/error/404.php  [END]
+</IfModule>
+
+DirectoryIndex index.php index.html Default.aspx Default.aspx.php
+ErrorDocument 404 /core/error/404.php
