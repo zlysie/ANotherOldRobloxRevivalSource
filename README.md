@@ -24,3 +24,9 @@ Generate a PrivateKey.pem using RBXSIGTOOLS.
 Settings (for database connections and RCC Rendering) are in `core/settings.env`
 
 Giving yourself admin via the database uses the profilebadges table (example provided in the schema)
+
+### Why does this exist?
+
+I burnt out and I'm genuinely done with making this type of stuff anymore.
+
+So I thought maybe someone else could do some use with this.
