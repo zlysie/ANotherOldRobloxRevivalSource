@@ -25,6 +25,8 @@ Settings (for database connections and RCC Rendering) are in `core/settings.env`
 
 Giving yourself admin via the database uses the profilebadges table (example provided in the schema)
 
+Also the domain used in the clients is EXPLICITLY `arl.lambda.cam`, no other shit like www or whatever just arl (so update that when you can or just repatch from stock)
+
 ### Why does this exist?
 
 I burnt out and I'm genuinely done with making this type of stuff anymore.
